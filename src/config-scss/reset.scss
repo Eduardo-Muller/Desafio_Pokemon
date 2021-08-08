@@ -3,4 +3,10 @@
 *::before{
 	margin: 0;
 	padding: 0;
+	text-decoration: none;
+	list-style: none;
+}
+input{
+	outline: none;
+	font-weight: 100;
 }
