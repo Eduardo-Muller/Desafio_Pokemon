@@ -1,1 +1,40 @@
-<p>card-details works!</p>
+<main class="card_list">
+  <a href="/">Voltar</a>
+  <section class="card_body">
+    <section class="card image">
+      <img [src]="pokemon.images.large" [alt]="pokemon.name" />
+      <div class="glow"></div>
+    </section>
+  </section>
+
+  <section class="pokemon">
+    <div class="pokemon__status">
+      <p><b>Id:</b> {{ pokemon.id }}</p>
+      <h4><b>Pokemon</b> : {{ pokemon.name }}</h4>    
+      <ul class="pokemon__status-type">
+        <li
+          *ngFor="let value of pokemon.types"
+          [class]="'pokemon__status-type--' + value.toLowerCase()"
+        >
+          <b>Tipo </b>: {{ pokemon.types }}
+        </li>
+        
+      </ul>
+      <p *ngFor="let resistance of pokemon.resistances">
+        <b>Resistência </b>: {{ resistance.type }} {{ resistance.value }}
+       </p>
+      <p *ngFor="let weakness of pokemon.weaknesses">
+        <b>Fraquezas </b>: {{ weakness.type }}  {{ weakness.value }}
+      </p>
+      <div *ngFor="let attack of pokemon.attacks">
+        <p><b>Ataque</b> : {{ attack.name }}</p>
+        <details class="details">
+          <summary>Detalhes</summary>
+          <p><b>Dano</b> : {{ attack.damage }}</p>
+          <p><b>Custo de Mana</b> : {{ attack.cost }} {{ attack.convertedEnergyCost }}</p>
+          <p><b>Efeito </b> : {{ attack.text }}</p>
+        </details>
+      </div>
+    </div>
+  </section>
+</main>

@@ -9,23 +9,11 @@
       </div>
       <div class="pokemon" *ngIf="pokemon"> 
         <section class="pokemon__status">
-
-          <h4>{{pokemon.name.toLowerCase()}}</h4>
-         
+          <h4>{{pokemon.name}}</h4>
           <span><b>Id:</b> {{pokemon.id}}</span>
           <ul class="pokemon__status-type"> 
             <li *ngFor="let value of pokemon.types" [class]="'pokemon__status-type--'+value.toLowerCase()">{{pokemon.types}}</li>
           </ul>
-          <div *ngFor="let attack of pokemon.attacks">
-            <p>{{attack.name}}</p>
-            <p>{{attack.damage}}</p>
-            <p>{{attack.convertedEnergyCost}}</p>
-            <p> {{attack.cost}} </p>
-            <p>{{attack.text}}</p>
-            <p *ngFor="let resistance of pokemon.resistances">{{resistance.type}}</p>
-            <p *ngFor="let resistance of pokemon.resistances">{{resistance.value}}</p>
-          </div>
-        
         </section>
       </div> 
     </a>
