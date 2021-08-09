@@ -12,8 +12,6 @@
 ```
 ## Como inicializar o projeto:
 
-<a href="https://pokemon-tcgx.herokuapp.com/" > Link do Projeto </a>
-
 Clone  o repositório: 
 ```
  git clone : https://github.com/Eduardo-Muller/Desafio_Pokemon/
