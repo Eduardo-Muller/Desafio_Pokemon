@@ -1,4 +1,6 @@
-<div class="card_list">
+<poke-search (emmitSearch)="getSearch($event)"></poke-search>
+
+<section class="card_list">
   <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
     <a [routerLink]="['details', pokemon.id]"class="card_body">
       <div class="card image">
@@ -8,7 +10,7 @@
       <div class="pokemon" *ngIf="pokemon"> 
         <section class="pokemon__status">
 
-          <h4>{{pokemon.name}}</h4>
+          <h4>{{pokemon.name.toLowerCase()}}</h4>
          
           <span><b>Id:</b> {{pokemon.id}}</span>
           <ul class="pokemon__status-type"> 
@@ -28,4 +30,4 @@
       </div> 
     </a>
   </ng-template>
-</div>
+</section>

@@ -8,7 +8,7 @@ import { map, tap } from 'rxjs/operators'
 })
 export class PokeAPIService {
 
-  private url: string = 'https://api.pokemontcg.io/v2/cards/?pageSize=36&count=6';
+  private url: string = 'https://api.pokemontcg.io/v2/cards/?pageSize=51&page=1';
 
   constructor(
     private http: HttpClient
