@@ -1,27 +1,46 @@
 # PokemonCardGame
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 12.2.0.
+## Tecnologias utilizadas:
+```
+- Angular 12
 
-## Development server
+- SCSS
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+- Typescript
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+```
+## Como inicializar o projeto:
 
-## Build
+<a href="https://pokemon-tcgx.herokuapp.com/" > Link do Projeto </a>
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+Clone  o repositório: 
+```
+ git clone : https://github.com/Eduardo-Muller/Desafio_Pokemon/
+```
+Instale os pacotes
+```
+npm install
+```
 
-## Running unit tests
+Execute o projeto:
+```
+Mudar no arquivo package.json  o script start para :
+ng s -o
+```
+No browser acessar a aplicação:
+```
+http://localhost:4200
+```
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+## Dificuldades durante a execução do projeto
 
-## Running end-to-end tests
+Voltar a implementar o Angular foi uma dificuldade inicial, voltar a me acostumar com a semântica dos componentes foi um pouco trabalho .Um outro problema que tive foi a infelicidade de ter a tela do notebook comprometida, com isso custando um precioso tempo até conseguir uma tela secundaria.
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+## Agradecimentos
 
-## Further help
+Agradeço a oportunidade que a Keeggo deu, esse processo seletivo me mostrou algumas fraquezas minhas e  habilidades em que posso melhorar com o decorrer do tempo. Esse aprendizado ficará gravado agora na minha mente.
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+## Autor
+
+Desenvolvido por [**Eduardo Müller**](https://www.linkedin.com/in/eduardosm%C3%BCller/)
