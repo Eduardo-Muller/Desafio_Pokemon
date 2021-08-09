@@ -1,14 +1,19 @@
-const express = require("express");
-const path = require("path");
-const port = process.env.PORT || 5000;
-const app = express()
 
-app.use(express.static(__dirname));
-app.use(express.static(path.join(__dirname,"build")));
-app.get("/ping", function(req,res) {
-  return res.send("pong")
-});
-app.get("/*", function(req,res) {
-  res.sendFile(path.join(__dirname, "build" , "index.html"))
-});
-app.listen(port)
+//Install express server
+const express = require('express');
+const path = require('path');
+
+const app = express();
+
+// Serve only the static files form the dist directory
+app.use(express.static('./dist/herokuAngular'));
+
+var cors = require('cors');
+app.use(cors());
+
+app.get('/*', (req, res) =>
+    res.sendFile('index.html', {root: 'dist/angular-app-heroku/'}),
+);
+
+// Start the app by listening on the default Heroku port
+app.listen(process.env.PORT || 8080);
