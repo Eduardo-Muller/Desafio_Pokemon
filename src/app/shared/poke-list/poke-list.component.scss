@@ -4,34 +4,44 @@
   .card_list{
     display: flex;
     margin-top: rem-calc(32);
+    justify-content: space-evenly;
+    flex-wrap: wrap;
     .card_body{
-      width: rem-calc(400);
+      width: rem-calc(190);
+      height: rem-calc(320);
       background: rgba(255,255,255,0.1);
       border-radius: rem-calc(10);
       display: flex;
       margin: rem-calc(8);
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      padding: rem-calc(12) rem-calc(22);
     }
   }
   .card {
     font-weight: bold;
-    padding: calc-rem(12);
     text-align: right;
     color: #181a1a;
-    width: rem-calc(250);
-    height: rem-calc(340);
+    width: rem-calc(150);
+    height: rem-calc(225);
     box-shadow: 0 rem-calc(1) rem-calc(5) #00000099;
     border-radius: 10px;
-    background-image: url(https://images.unsplash.com/photo-1557672199-6e8c8b2b8fff?ixlib=rb-1.2.1&auto=format&fit=crop&w=934&q=80);
     background-size: cover;
     position: relative;
     transition-duration: 0.3s;
     transition-property: transform, box-shadow;
     transition-timing-function: ease-out;
     transform: rotate3d(0);
-    margin: rem-calc(8);
     &:hover {
       transition-duration: 150ms;
-      box-shadow: 0 rem-calc(5)rem-calc(20) rem-calc(5) #00000044;
+      box-shadow: 0 rem-calc(5)rem-calc(20) rem-calc(5) #cccccc44;
+    }
+    &.image {
+      img{
+        width: rem-calc(150);
+        height: rem-calc(225);
+      }
     }
     .glow {
       position: absolute;
@@ -44,13 +54,23 @@
   }
   .pokemon{
     display: flex;
-    width: 49%;
-    height: rem-calc(350);
+    width: 100%;
+    max-width: rem-calc(200);
+    height: rem-calc(200);
     color: var(--white);
-    padding: rem-calc(6);
     border-radius: rem-calc(10);
-    position: relative;
+    
     &__status{
+      h4{
+        margin: 0;
+      }
+      span{
+        position: absolute;
+        bottom: rem-calc(5);
+        right: rem-calc(22);
+        font-size: rem-calc(10);
+        color: rgb(185, 179, 179);
+      }
       h2{
         font-size: rem-calc(22);
         font-style: italic;
@@ -61,20 +81,176 @@
         flex-direction: column;
         li{
           border-radius: rem-calc(15);
-          padding: rem-calc(5) rem-calc(8);
+          padding: rem-calc(2) rem-calc(8);
           max-width: rem-calc(60);
           text-align: center;
           margin: rem-calc(5);
-          font-size: rem-calc(14);
+          font-size: rem-calc(12);
           display:flex;
           align-items: center;
           justify-content: center;
         }
+        &--bug {
+          background: -webkit-linear-gradient(180deg, var(--bug) 50%, var(--bug) 50%);
+          background: -ms-linear-gradient(180deg, var(--bug) 50%, var(--bug) 50%);
+          background: -moz-linear-gradient(180deg, var(--bug) 50%, var(--bug) 50%);
+          background: -o-linear-gradient(180deg, var(--bug) 50%, var(--bug) 50%);
+          background: linear-gradient(180deg, var(--bug) 50%, var(--bug) 50%);
+          background-color: var(--bug);
+          color: var(--white);
+        }
+        &--dark {
+          background: -webkit-linear-gradient(180deg, var(--dark) 50%, var(--dark) 50%);
+          background: -ms-linear-gradient(180deg, var(--dark) 50%, var(--dark) 50%);
+          background: -moz-linear-gradient(180deg, var(--dark) 50%, var(--dark) 50%);
+          background: -o-linear-gradient(180deg, var(--dark) 50%, var(--dark) 50%);
+          background: linear-gradient(180deg, var(--dark) 50%, var(--dark) 50%);
+          background-color: var(--dark);
+          color: var(--white);
+        }
+        &--dragon{
+          background: -webkit-linear-gradient(180deg, var(--dragon) 50%, var(--dragon) 50%);
+          background: -ms-linear-gradient(180deg, var(--dragon) 50%, var(--dragon) 50%);
+          background: -moz-linear-gradient(180deg, var(--dragon) 50%, var(--dragon) 50%);
+          background: -o-linear-gradient(180deg, var(--dragon) 50%, var(--dragon) 50%);
+          background: linear-gradient(180deg, var(--dragon) 50%, var(--dragon) 50%);
+          background-color: var(--dragon);
+          color: var(--white);
+        }
+        &--lightning{
+          background: -webkit-linear-gradient(180deg, var(--lightning) 50%, var(--lightning) 50%);
+          background: -ms-linear-gradient(180deg, var(--lightning) 50%, var(--lightning) 50%);
+          background: -moz-linear-gradient(180deg, var(--lightning) 50%, var(--lightning) 50%);
+          background: -o-linear-gradient(180deg, var(--lightning) 50%, var(--lightning) 50%);
+          background: linear-gradient(180deg, var(--lightning) 50%, var(--lightning) 50%);
+          background-color: var(--lightning);
+          color: var(--primary);
+        }
+        &--fairy{
+          background: -webkit-linear-gradient(180deg, var(--fairy) 50%, var(--fairy) 50%);
+          background: -ms-linear-gradient(180deg, var(--fairy) 50%, var(--fairy) 50%);
+          background: -moz-linear-gradient(180deg, var(--fairy) 50%, var(--fairy) 50%);
+          background: -o-linear-gradient(180deg, var(--fairy) 50%, var(--fairy) 50%);
+          background: linear-gradient(180deg, var(--fairy) 50%, var(--fairy) 50%);
+          background-color: var(--fairy);
+          color: var(--primary);
+        }
+        &--fighting{
+          background: -webkit-linear-gradient(180deg, var(--fighting) 50%, var(--fighting) 50%);
+          background: -ms-linear-gradient(180deg, var(--fighting) 50%, var(--fighting) 50%);
+          background: -moz-linear-gradient(180deg, var(--fighting) 50%, var(--fighting) 50%);
+          background: -o-linear-gradient(180deg, var(--fighting) 50%, var(--fighting) 50%);
+          background: linear-gradient(180deg, var(--fighting) 50%, var(--fighting) 50%);
+          background-color: var(--fighting);
+          color: var(--white);
+        }
+        &--fire{
+          background: -webkit-linear-gradient(180deg, var(--fire) 50%, var(--fire) 50%);
+          background: -ms-linear-gradient(180deg, var(--fire) 50%, var(--fire) 50%);
+          background: -moz-linear-gradient(180deg, var(--fire) 50%, var(--fire) 50%);
+          background: -o-linear-gradient(180deg, var(--fire) 50%, var(--fire) 50%);
+          background: linear-gradient(180deg, var(--fire) 50%, var(--fire) 50%);
+          background-color: var(--fire);
+          color: var(--white);
+        }
+        &--flying{
+          background: -webkit-linear-gradient(180deg, var(--flying) 50%, var(--flying) 50%);
+          background: -ms-linear-gradient(180deg, var(--flying) 50%, var(--flying) 50%);
+          background: -moz-linear-gradient(180deg, var(--flying) 50%, var(--flying) 50%);
+          background: -o-linear-gradient(180deg, var(--flying) 50%, var(--flying) 50%);
+          background: linear-gradient(180deg, var(--flying) 50%, var(--flying) 50%);
+          background-color: var(--flying);
+          color: var(--primary);
+        }
+        &--ghost{
+          background: -webkit-linear-gradient(180deg, var(--ghost) 50%, var(--ghost) 50%);
+          background: -ms-linear-gradient(180deg, var(--ghost) 50%, var(--ghost) 50%);
+          background: -moz-linear-gradient(180deg, var(--ghost) 50%, var(--ghost) 50%);
+          background: -o-linear-gradient(180deg, var(--ghost) 50%, var(--ghost) 50%);
+          background: linear-gradient(180deg, var(--ghost) 50%, var(--ghost) 50%);
+          background-color: var(--ghost);
+          color: var(--white);
+        }
         &--grass{
-          background: var(--grass);
+          background: -webkit-linear-gradient(180deg, var(--grass) 50%, var(--grass) 50%);
+          background: -ms-linear-gradient(180deg, var(--grass) 50%, var(--grass) 50%);
+          background: -moz-linear-gradient(180deg, var(--grass) 50%, var(--grass) 50%);
+          background: -o-linear-gradient(180deg, var(--grass) 50%, var(--grass) 50%);
+          background: linear-gradient(180deg, var(--grass) 50%, var(--grass) 50%);
+          background-color: var(--grass);
+          color: var(--primary);
+        }
+        &--ground{
+          background: -webkit-linear-gradient(180deg, var(--ground) 50%, var(--ground) 50%);
+          background: -ms-linear-gradient(180deg, var(--ground) 50%, var(--ground) 50%);
+          background: -moz-linear-gradient(180deg, var(--ground) 50%, var(--ground) 50%);
+          background: -o-linear-gradient(180deg, var(--ground) 50%, var(--ground) 50%);
+          background: linear-gradient(180deg, var(--ground) 50%, var(--ground) 50%);
+          background-color: var(--ground);
+          color: var(--primary);
+        }
+        &--ice{
+          background: -webkit-linear-gradient(180deg, var(--ice) 50%, var(--ice) 50%);
+          background: -ms-linear-gradient(180deg, var(--ice) 50%, var(--ice) 50%);
+          background: -moz-linear-gradient(180deg, var(--ice) 50%, var(--ice) 50%);
+          background: -o-linear-gradient(180deg, var(--ice) 50%, var(--ice) 50%);
+          background: linear-gradient(180deg, var(--ice) 50%, var(--ice) 50%);
+          background-color: var(--ice);
+          color: var(--primary);
+        }
+        &--normal{
+          background: -webkit-linear-gradient(180deg, var(--normal) 50%, var(--normal) 50%);
+          background: -ms-linear-gradient(180deg, var(--normal) 50%, var(--normal) 50%);
+          background: -moz-linear-gradient(180deg, var(--normal) 50%, var(--normal) 50%);
+          background: -o-linear-gradient(180deg, var(--normal) 50%, var(--normal) 50%);
+          background: linear-gradient(180deg, var(--normal) 50%, var(--normal) 50%);
+          background-color: var(--normal);
+          color: var(--primary);
         }
         &--poison{
-          background: var(--poison);
+          background: -webkit-linear-gradient(180deg, var(--poison) 50%, var(--poison) 50%);
+          background: -ms-linear-gradient(180deg, var(--poison) 50%, var(--poison) 50%);
+          background: -moz-linear-gradient(180deg, var(--poison) 50%, var(--poison) 50%);
+          background: -o-linear-gradient(180deg, var(--poison) 50%, var(--poison) 50%);
+          background: linear-gradient(180deg, var(--poison) 50%, var(--poison) 50%);
+          background-color: var(--poison);
+          color: var(--white);
+        }
+        &--psychic{
+          background: -webkit-linear-gradient(180deg, var(--psychic) 50%, var(--psychic) 50%);
+          background: -ms-linear-gradient(180deg, var(--psychic) 50%, var(--psychic) 50%);
+          background: -moz-linear-gradient(180deg, var(--psychic) 50%, var(--psychic) 50%);
+          background: -o-linear-gradient(180deg, var(--psychic) 50%, var(--psychic) 50%);
+          background: linear-gradient(180deg, var(--psychic) 50%, var(--psychic) 50%);
+          background-color: var(--psychic);
+          color: var(--white);
+        }
+        &--rock{
+          background: -webkit-linear-gradient(180deg, var(--rock) 50%, var(--rock) 50%);
+          background: -ms-linear-gradient(180deg, var(--rock) 50%, var(--rock) 50%);
+          background: -moz-linear-gradient(180deg, var(--rock) 50%, var(--rock) 50%);
+          background: -o-linear-gradient(180deg, var(--rock) 50%, var(--rock) 50%);
+          background: linear-gradient(180deg, var(--rock) 50%, var(--rock) 50%);
+          background-color: var(--rock);
+          color: var(--white);
+        }
+        &--steel{
+          background: -webkit-linear-gradient(180deg, var(--steel) 50%, var(--steel) 50%);
+          background: -ms-linear-gradient(180deg, var(--steel) 50%, var(--steel) 50%);
+          background: -moz-linear-gradient(180deg, var(--steel) 50%, var(--steel) 50%);
+          background: -o-linear-gradient(180deg, var(--steel) 50%, var(--steel) 50%);
+          background: linear-gradient(180deg, var(--steel) 50%, var(--steel) 50%);
+          background-color: var(--steel);
+          color: var(--primary);
+        }
+        &--water{
+          background: -webkit-linear-gradient(180deg, var(--water) 50%, var(--water) 50%);
+          background: -ms-linear-gradient(180deg, var(--water) 50%, var(--water) 50%);
+          background: -moz-linear-gradient(180deg, var(--water) 50%, var(--water) 50%);
+          background: -o-linear-gradient(180deg, var(--water) 50%, var(--water) 50%);
+          background: linear-gradient(180deg, var(--water) 50%, var(--water) 50%);
+          background-color: var(--water);
+          color: var(--white);
         }
       }
     }

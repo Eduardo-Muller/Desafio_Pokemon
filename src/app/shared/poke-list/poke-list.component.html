@@ -1,40 +1,30 @@
 <div class="card_list">
-  <div class="card_body">
-    <div class="card image">
-      <div class="glow"></div>
+  <ng-template ngFor let-pokemon [ngForOf]="getAllPokemons">
+    <div class="card_body">
+      <div class="card image">
+        <img [src]="pokemon.images.small" [alt]="pokemon.name">
+        <div class="glow"></div>
+      </div>
+      <a class="pokemon"> 
+        <section class="pokemon__status">
+          <h4>{{pokemon.name}}</h4>
+         
+          <span><b>Id:</b> {{pokemon.id}}</span>
+          <ul class="pokemon__status-type"> 
+            <li *ngFor="let value of pokemon.types" [class]="'pokemon__status-type--'+value.toLowerCase()">{{pokemon.types}}</li>
+          </ul>
+          <div *ngFor="let attack of pokemon.attacks">
+            <p>{{attack.name}}</p>
+            <p>{{attack.damage}}</p>
+            <p>{{attack.convertedEnergyCost}}</p>
+            <p> {{attack.cost}} </p>
+            <p>{{attack.text}}</p>
+            <p *ngFor="let resistance of pokemon.resistances">{{resistance.type}}</p>
+            <p *ngFor="let resistance of pokemon.resistances">{{resistance.value}}</p>
+          </div>
+        
+        </section>
+      </a> 
     </div>
-    <a class="pokemon"> 
-      <section class="pokemon__status">
-        <h2>
-          Bulbasaur
-        </h2>
-        <ul class="pokemon__status-type"> 
-          <li class="pokemon__status-type--grass">Grass</li>
-          <li class="pokemon__status-type--poison">Poison</li>
-        </ul>
-      </section>
-      <section class="pokemon__image">
-        <img src="" alt="">
-      </section>
-    </a> 
-  </div>
-  <div class="card_body">
-    <div class="card image">
-      <div class="glow"></div>
-    </div>
-    <a class="pokemon"> 
-      <section class="pokemon__status">
-        <h2>
-          Bulbasaur
-        </h2>
-        <ul class="pokemon__status-type"> 
-          <li class="pokemon__status-type--grass">Grass</li>
-          <li class="pokemon__status-type--poison">Poison</li>
-        </ul>
-      </section>
-      <section class="pokemon__image">
-        <img src="" alt="">
-      </section>
-    </a> 
-  </div>
+  </ng-template>
 </div>
